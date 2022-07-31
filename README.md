@@ -10,10 +10,8 @@ Usage
 -------------
 Clone this repository and run setup.py and requirements.txt. Also install below mentioned dependencies. Then pass the following command-line arguments to \_\_init\_\_.py in **morphing** folder.
 ```
-python3 __init__.py face/body path_to_first_image path_to_second_image duration_of_video frame_rate path_where_video_is_to_be_saved
+python3 __init__.py path_to_first_image path_to_second_image duration_frames path_where_video_is_to_be_saved
 ```
-- Note that presently only **face** is allowed as first argument.
-- Also instead of the path to image file, Python **File Object** of that image can also be passed in as an argument.
 
 Examples
 -------------
