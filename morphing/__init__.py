@@ -4,9 +4,15 @@ import subprocess
 import argparse
 import shutil
 
-from face_landmark_detection import makeCorrespondence
-from delaunay import makeDelaunay
-from faceMorph import makeMorphs
+try:
+    from face_landmark_detection import makeCorrespondence
+    from delaunay import makeDelaunay
+    from faceMorph import makeMorphs
+except ImportError:
+    sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+    from face_morphing.morphing.face_landmark_detection import makeCorrespondence
+    from face_morphing.morphing.delaunay import makeDelaunay
+    from face_morphing.morphing.faceMorph import makeMorphs
 
 
 def do_morphing(predictor, img1, img2, dur_frames, result_dir):

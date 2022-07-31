@@ -56,7 +56,7 @@ def morphTriangle(img1, img2, img, t1, t2, t, alpha):
     img[r[1]:r[1] + r[3], r[0]:r[0] + r[2]] = img[r[1]:r[1] + r[3], r[0]:r[0] + r[2]] * (1 - mask) + imgRect * mask
 
 
-def makeMorphs(totalImages, theImage1, theImage2, theList1, theList2, theList4, size, theResultDir):
+def makeMorphs(totalImages, theImage1, theImage2, theList1, theList2, theList4, size, theResultDir, save_counter=1):
 
     if not os.path.isdir(theResultDir):
         os.mkdir(theResultDir)
@@ -102,7 +102,7 @@ def makeMorphs(totalImages, theImage1, theImage2, theList1, theList2, theList4, 
         temp_res = cv2.cvtColor(np.uint8(imgMorph), cv2.COLOR_BGR2RGB)
         res = Image.fromarray(temp_res)
 
-        frame_number = j + 1
+        frame_number = save_counter + j
         res.save(os.path.join(theResultDir, f'{frame_number:06}' + '.jpg'), 'JPEG')
 
 #  makeMorphs(0.5,60,'2.jpg','3.jpg')
