@@ -103,6 +103,7 @@ def makeMorphs(totalImages, theImage1, theImage2, theList1, theList2, theList4, 
         res = Image.fromarray(temp_res)
 
         frame_number = save_counter + j
-        res.save(os.path.join(theResultDir, f'frame{frame_number:06}' + '.jpg'), 'JPEG')
+        # res.save(os.path.join(theResultDir, f'frame{frame_number:06}' + '.jpg'), 'JPEG')
+        res.save(os.path.join(theResultDir, f'frame{frame_number:06}' + '.png'), 'PNG')
 
 #  makeMorphs(0.5,60,'2.jpg','3.jpg')
